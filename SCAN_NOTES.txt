@@ -1,0 +1,30 @@
+Ascension / WotLK 3.3.5a Compatibility Scan Notes
+================================================
+
+Scan date: 2026-02-18 19:43:32
+
+What was scanned:
+- TibbettsMultiBar.lua
+- TibbettsMultiBar_Config.lua
+- TibbettsMultiBar_Picker.lua
+- TibbettsMultiBar_Compat.lua
+- All .toc variants
+
+Findings & handling:
+1) Texture:SetObeyStepOnDrag
+   - Not available on WotLK 3.3.5a.
+   - Now called via Compat.SafeCall(), so it's a no-op where missing.
+
+2) Texture:SetColorTexture signature differences
+   - Not reliable across older clients.
+   - Centralized via Compat.SetSolidColor() (WHITE8X8 + SetVertexColor fallback).
+
+3) Retail Settings API (Settings.*)
+   - Not present on WotLK.
+   - Code already guards with `if _G.Settings and ...` then fallback to InterfaceOptions_AddCategory.
+
+4) C_Reputation (modern API)
+   - Not present on WotLK.
+   - Code already prefers GetWatchedFactionInfo() and only uses C_Reputation when present.
+
+No other unguarded Retail-only APIs were found in this version.

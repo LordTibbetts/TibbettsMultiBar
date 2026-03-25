@@ -1,0 +1,13 @@
+## Interface: 50503
+## Title: TibbettsMultiBar
+## Notes: XP, Reputation, and Honor bar replacement with ticks, profiles, and full appearance controls.
+## Author: Wilford Tibbetts
+## Version: 1.1.6
+## X-Flavor: Mists of Pandaria Classic (current Classic progression, 5.5.x)
+## SavedVariables: TibbettsMultiBarDB, TibbettsMultiBarSV
+## SavedVariablesPerCharacter: TibbettsMultiBarCharSV
+
+TibbettsMultiBar_Compat.lua
+TibbettsMultiBar.lua
+TibbettsMultiBar_Picker.lua
+TibbettsMultiBar_Config.lua
